@@ -1,0 +1,71 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+
+@Lee-KyungSeok
+Learn Git and GitHub without any code!
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+
+
+depromeet
+/
+7th-final-9th-team-api
+5
+00
+ Code Issues 21 Pull requests 1 Actions Projects 1 Wiki Security Insights
+7th-final-9th-team-api/.gitignore
+@junhaesung junhaesung refactor #6 - application-local.properties 파일을 제외합니다
+ccc9d72 on 27 Dec 2019
+33 lines (29 sloc)  390 Bytes
+
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+/src/main/resources/application-local.properties
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+ Octotree
+Login to unlock more features
