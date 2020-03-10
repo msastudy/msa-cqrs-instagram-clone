@@ -1,0 +1,12 @@
+### Signup
+POST http://localhost:10000/user
+Content-Type: application/json
+
+{
+  "email": "sadsdf@gmail.com",
+  "password": "abcdefg",
+  "userName": "user",
+  "fullName": "fullsd"
+}
+
+###

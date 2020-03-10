@@ -1,12 +1,11 @@
 package com.instagram.clone.account.command.aggregate;
 
-import com.instagram.clone.account.command.model.Gender;
 import com.instagram.clone.account.command.model.AccountStatus;
+import com.instagram.clone.account.command.model.Gender;
 import com.instagram.clone.common.model.command.account.CreateAccountCommand;
 import com.instagram.clone.common.model.event.account.AccountCreatedEvent;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
@@ -19,9 +18,9 @@ import static org.axonframework.modelling.command.AggregateLifecycle.apply;
 
 @Slf4j
 @Aggregate
-@RequiredArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Entity
+@Entity()
+@Table(name = "t_account_aggregate")
 public class AccountAggregate {
 
     @AggregateIdentifier
@@ -65,8 +64,13 @@ public class AccountAggregate {
     private AccountStatus status = AccountStatus.ACTIVE;
 
     @CommandHandler
-    private void handleCommand(CreateAccountCommand command) {
+    public void handleCommand(CreateAccountCommand command) {
         log.info("handle CreateAccountCommand : {}", command);
+        this.password = command.getEncryptedPassword();
+        this.email = command.getEmail();
+        this.userName = command.getUserName();
+        this.fullName = command.getFullName();
+
         apply(AccountCreatedEvent.builder()
                 .accountId(command.getAccountId())
                 .email(command.getEmail())

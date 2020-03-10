@@ -39,7 +39,7 @@ public class UserController {
         String userId = createAccountService.create(requestDto);
 
         // Todo make jwt Token with userId
-        String jwtToken = "asfsdfasfasffsasf";
+        String jwtToken = userId;
         return ResponseEntity.ok().body(ApiResult.OK(new TokenResponseDto(jwtToken)));
     }
 }

@@ -1,14 +1,11 @@
 package com.instagram.clone.common.model.event.account;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 @ToString
 @Getter
 @Builder
-@NoArgsConstructor
+@AllArgsConstructor
 public class AccountCreatedEvent {
     private String accountId;
     private String email;

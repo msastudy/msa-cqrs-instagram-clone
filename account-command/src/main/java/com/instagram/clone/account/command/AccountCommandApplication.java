@@ -2,8 +2,11 @@ package com.instagram.clone.account.command;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
-@SpringBootApplication
+@SpringBootApplication(
+        exclude = {SecurityAutoConfiguration.class}
+)
 public class AccountCommandApplication {
 
     public static void main(String[] args) {
