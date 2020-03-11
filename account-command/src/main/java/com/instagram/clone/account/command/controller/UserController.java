@@ -4,7 +4,9 @@ import com.instagram.clone.account.command.model.dto.request.CreateUserRequestDt
 import com.instagram.clone.account.command.model.dto.response.TokenResponseDto;
 import com.instagram.clone.account.command.service.CheckAccountDuplicatedService;
 import com.instagram.clone.account.command.service.CreateAccountService;
+import com.instagram.clone.account.command.service.JWTService;
 import com.instagram.clone.common.model.api.ApiResult;
+import com.instagram.clone.common.model.security.model.Role;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +23,7 @@ public class UserController {
 
     private final CreateAccountService createAccountService;
     private final CheckAccountDuplicatedService checkAccountDuplicatedService;
+    private final JWTService jwtService;
 
     @PostMapping
     public ResponseEntity<ApiResult<TokenResponseDto>> createUser(@RequestBody CreateUserRequestDto requestDto) throws Exception {
@@ -36,10 +39,13 @@ public class UserController {
         }
 
         // create user
-        String userId = createAccountService.create(requestDto);
+        String accountId = createAccountService.create(requestDto);
 
-        // Todo make jwt Token with userId
-        String jwtToken = userId;
+        // make jwt Token with userId
+        String jwtToken = jwtService.generate(accountId,
+                requestDto.getUserName(),
+                null,
+                new String[]{Role.USER.value()});
         return ResponseEntity.ok().body(ApiResult.OK(new TokenResponseDto(jwtToken)));
     }
 }

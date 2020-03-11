@@ -64,7 +64,7 @@ public class AccountAggregate {
     private AccountStatus status = AccountStatus.ACTIVE;
 
     @CommandHandler
-    public void handleCommand(CreateAccountCommand command) {
+    public AccountAggregate(CreateAccountCommand command) {
         log.info("handle CreateAccountCommand : {}", command);
         this.password = command.getEncryptedPassword();
         this.email = command.getEmail();
@@ -83,11 +83,11 @@ public class AccountAggregate {
     @EventSourcingHandler
     protected void handleEventSourcing(AccountCreatedEvent event) {
         log.info("handle AccountCreatedEvent : {}", event);
-        this.accountId = event.getAccountId();
-        this.password = event.getEncryptedPassword();
-        this.email = event.getEmail();
-        this.userName = event.getUserName();
-        this.fullName = event.getFullName();
+//        this.accountId = event.getAccountId();
+//        this.password = event.getEncryptedPassword();
+//        this.email = event.getEmail();
+//        this.userName = event.getUserName();
+//        this.fullName = event.getFullName();
     }
 }
 
