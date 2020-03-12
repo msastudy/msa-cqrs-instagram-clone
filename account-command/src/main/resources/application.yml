@@ -16,3 +16,10 @@ spring:
 axon:
   axonserver:
     servers: localhost:8124
+
+jwt:
+  token:
+    header: Authorization
+    issuer: instagram_clone
+    clientSecret: 93CA06F749DF48EB6FD773C0F22CFA88A58358058724690BED2569A8A72EB9E5
+    expirySeconds: 0

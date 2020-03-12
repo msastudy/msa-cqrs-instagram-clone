@@ -7,9 +7,12 @@ dependencies {
 
     implementation 'com.h2database:h2'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
     // axon
     implementation "org.axonframework:axon-spring-boot-starter:$axonVersion"
     implementation "org.axonframework:axon-configuration:$axonVersion"
+
+    implementation "com.auth0:java-jwt:3.8.3"
 }

@@ -1,0 +1,17 @@
+### Signup
+POST http://localhost:10000/user
+Content-Type: application/json
+
+{
+  "email": "sadsdf@gmail.com",
+  "password": "abcdefg",
+  "userName": "user",
+  "fullName": "fullsd"
+}
+
+### Get User (Get Me)
+GET http://localhost:10001/user
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwiaXNzIjoiaW5zdGFncmFtX2Nsb25lIiwidXNlck5hbWUiOiJ1c2VyIiwiaWF0IjoxNTgzOTgxOTM3LCJ1c2VyS2V5IjoiMjgxZjU2NzAtYThkZS00YmE5LWEyNzMtMmViYTYyYTkyMzBiIn0.QYpBCMFaFHJq7ZzZiX84lVQGW5dlOxHosbtNfr3Yb7aKyQF1kfwI-OKshbdLvmHieYXrAvwObXNfC4ML8cS1BA
+
+###
