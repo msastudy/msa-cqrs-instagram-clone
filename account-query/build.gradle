@@ -12,4 +12,8 @@ dependencies {
     // axon
     implementation "org.axonframework:axon-spring-boot-starter:$axonVersion"
     implementation "org.axonframework:axon-configuration:$axonVersion"
+
+    implementation "com.auth0:java-jwt:3.8.3"
+
+    implementation 'org.apache.commons:commons-lang3:3.9'
 }

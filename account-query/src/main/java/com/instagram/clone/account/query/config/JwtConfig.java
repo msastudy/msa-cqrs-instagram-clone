@@ -1,20 +1,13 @@
-package com.instagram.clone.account.command.config;
+package com.instagram.clone.account.query.config;
 
-import com.instagram.clone.common.model.security.JWT;
+import com.instagram.clone.common.security.JWT;
+import com.instagram.clone.common.security.JwtInterceptor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
-public class SecurityConfig {
-
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-
+public class JwtConfig {
     @Value("${jwt.token.issuer}") String issuer;
     @Value("${jwt.token.clientSecret}") String clientSecret;
     @Value("${jwt.token.expirySeconds}") int expirySeconds;
@@ -22,5 +15,10 @@ public class SecurityConfig {
     @Bean
     public JWT jwt() {
         return new JWT(issuer, clientSecret, expirySeconds);
+    }
+
+    @Bean
+    public JwtInterceptor jwtInterceptor() {
+        return new JwtInterceptor(this.jwt());
     }
 }

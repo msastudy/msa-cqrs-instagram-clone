@@ -1,6 +1,6 @@
 package com.instagram.clone.account.command.service;
 
-import com.instagram.clone.common.model.security.JWT;
+import com.instagram.clone.common.security.JWT;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;

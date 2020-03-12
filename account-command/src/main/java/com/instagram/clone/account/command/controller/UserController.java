@@ -6,7 +6,7 @@ import com.instagram.clone.account.command.service.CheckAccountDuplicatedService
 import com.instagram.clone.account.command.service.CreateAccountService;
 import com.instagram.clone.account.command.service.JWTService;
 import com.instagram.clone.common.model.api.ApiResult;
-import com.instagram.clone.common.model.security.model.Role;
+import com.instagram.clone.common.security.model.Role;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

@@ -83,11 +83,11 @@ public class AccountAggregate {
     @EventSourcingHandler
     protected void handleEventSourcing(AccountCreatedEvent event) {
         log.info("handle AccountCreatedEvent : {}", event);
-//        this.accountId = event.getAccountId();
-//        this.password = event.getEncryptedPassword();
-//        this.email = event.getEmail();
-//        this.userName = event.getUserName();
-//        this.fullName = event.getFullName();
+        this.accountId = event.getAccountId();
+        this.password = event.getEncryptedPassword();
+        this.email = event.getEmail();
+        this.userName = event.getUserName();
+        this.fullName = event.getFullName();
     }
 }
 
